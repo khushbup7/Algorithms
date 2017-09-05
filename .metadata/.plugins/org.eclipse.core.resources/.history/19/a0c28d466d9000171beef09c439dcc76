@@ -1,0 +1,27 @@
+package algorithms.linkedlists;
+
+import algorithms.Shuffle;
+
+public class LinkedList {
+	
+	public static Node createLinkedList() {
+		int[] arr = new int[10];
+		for(int i=0;i<10;i++) {
+			arr[i] = i;
+		}
+		
+		Shuffle.shuffle(arr);
+		Node temp = new Node();
+		Node dummy = temp;
+		System.out.println("Created linkedlist is: \n");
+		for(int i=0; i< arr.length-1; i++) {
+			Node n1 = new Node(i);
+			temp.next = n1;
+			temp = n1;
+			System.out.print(n1.val + " ");
+		}
+		
+		return dummy.next;
+		
+	}
+}

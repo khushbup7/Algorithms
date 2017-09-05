@@ -1,0 +1,39 @@
+package algorithms.linkedlists;
+
+public class ReverseLinkedList {
+	public static Node reverseIterative(Node head) {
+		  Node prev = null;
+		  while(head != null) {
+			  Node next = head.next;
+			  head.next = prev;
+			  prev = head;
+			  head = next;
+		  }
+		  
+		  return prev;
+	}
+	
+	public static Node reverseRecursive(Node head) {
+		Node prev = null;
+		head = reverseUtil(head, prev);
+		return head;
+	}
+	
+	private static Node reverseUtil(Node head, Node prev) {
+		if(head.next == null)
+			return head;
+		Node next = head.next;
+		head.next = prev;
+		prev = head;
+		head = next;
+		return reverseUtil(head, prev);
+	}
+
+	public static void main(String[] args) {
+		Node head = LinkedList.createLinkedList();
+		head = reverseIterative(head);
+		LinkedList.printlist(head);
+		head = reverseRecursive(head);
+		LinkedList.printlist(head);
+	}
+ }
