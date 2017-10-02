@@ -1,7 +1,0 @@
-package algorithms.linkedlists;
-
-public class ReverseLinkedList {
-	public Node reverse(Node head) {
-		
-	}
-}

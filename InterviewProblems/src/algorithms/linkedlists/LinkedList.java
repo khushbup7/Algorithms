@@ -1,6 +1,6 @@
 package algorithms.linkedlists;
 
-import algorithms.Shuffle;
+import algorithms.arrays.Shuffle;
 
 public class LinkedList {
 	
